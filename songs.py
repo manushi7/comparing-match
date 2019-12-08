@@ -37,8 +37,46 @@ if song3==song5:
 
     
     
+#---------------------------------------------------------------------------------------------------------------------
 
 
+
+
+data = {}
+match = {}
+
+def getuser_songs(user, data):
+    songs = []
+    print("Please give 5 songs name")
+    for i in range(5):
+        s = input(str(i+1) + ")")
+        songs.append(s)
+    data[user] = songs
+    print(data)
+
+def compare(data, user, match):
+    songs = []
+    compare_s = []
+    for i in data['bisesh']:
+        songs.append(i)
+    if user != 'bisesh':
+        for i in data[user]:
+            compare_s.append(i)
+    for j in songs:
+        for k in compare_s:
+            if j == k:
+                match[user] = 'bisesh'
+    
+    print(match)
+# qu = int(input("Comparison between how may users ?"))
+# if qu >= 2:
+for i in range(2):
+    print("Please give your name")
+    name = input("Name : ")
+    getuser_songs(name, data)
+
+for i in data:
+    compare(data, i, match)
 
 
     
